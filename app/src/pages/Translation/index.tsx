@@ -1,28 +1,50 @@
-import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useGetIp } from "../../hooks/useGetIp";
+import { useChangeLanguage } from "../../hooks/useChangeLanguage";
 
 const Translation = () => {
-  const { country } = useGetIp();
-  const { t, i18n } = useTranslation();
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-  };
-  const chineseCountryList: string[] = ["Taiwan", "China", "Malaysia"];
+  const { t } = useTranslation();
+  const { changeLanguage } = useChangeLanguage();
 
-  useEffect(() => {
-    if (!chineseCountryList.find((eachCountry) => eachCountry === country)) {
-      changeLanguage("zh");
-    } else {
-      changeLanguage("en");
-    }
-  }, [country]);
+  const headerMapper: {
+    text: string;
+    customFunction?: () => void;
+  }[] = [
+    { text: `${t("home")}` },
+    { text: `${t("about")}` },
+    {
+      text: "轉中文",
+      customFunction: () => {
+        localStorage.setItem("language_setting", "zh");
+        changeLanguage("zh");
+      },
+    },
+    {
+      text: "Use English",
+      customFunction: () => {
+        localStorage.setItem("language_setting", "en");
+        changeLanguage("en");
+      },
+    },
+    {
+      text: `${t("forget_language_setting")}`,
+      customFunction: () => {
+        localStorage.removeItem("language_setting");
+      },
+    },
+  ];
 
   return (
-    <>
-      <div>{country}</div>
-      <h1>{t("language_use")}</h1>
-    </>
+    <div className="text-white flex flex-wrap">
+      {headerMapper.map((item) => (
+        <div
+          key={item.text}
+          onClick={() => item.customFunction && item.customFunction()}
+          className="min-w-[100px] min-h-[30px] flex border-white border-solid border-[0.5px] border-spacing-5 cursor-pointer justify-center align-center"
+        >
+          {item.text}
+        </div>
+      ))}
+    </div>
   );
 };
 

@@ -6,6 +6,8 @@ export const useGetIp = () => {
   }, []);
 
   const [country, setCountry] = useState<string>();
+  const [getIPError, setGetIPError] = useState<boolean>(false);
+
   const getIp = useCallback(async () => {
     try {
       const response = await fetch("https://ipapi.co/json/");
@@ -13,7 +15,8 @@ export const useGetIp = () => {
       setCountry(jsonData.country_name);
     } catch (err) {
       console.error(err);
+      setGetIPError(true);
     }
   }, []);
-  return { country };
+  return { country, getIPError };
 };
