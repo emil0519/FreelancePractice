@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useChangeLanguage } from "../../hooks/useChangeLanguage";
 
-const Translation = () => {
+const FunctionBar = () => {
   const { t } = useTranslation();
   const { changeLanguage } = useChangeLanguage();
 
@@ -48,4 +48,4 @@ const Translation = () => {
   );
 };
 
-export default Translation;
+export default FunctionBar;
