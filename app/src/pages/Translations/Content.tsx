@@ -4,16 +4,11 @@ import { useGetIp } from "../../hooks/useGetIp";
 const Content = () => {
   const { country, getIPError } = useGetIp();
   const { t } = useTranslation();
-  const { i18n } = useTranslation();
 
   if (!country && !getIPError) return <></>;
 
   return (
-    <>
-      {t("origin_country_description")}
-      {i18n.language === "en" && " "}
-      {t(`${country}`)}
-    </>
+    <div className="text-white mt-10">{t("origin_country_description")}</div>
   );
 };
 

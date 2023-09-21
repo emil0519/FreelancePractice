@@ -27,7 +27,7 @@ i18n
           about: "關於我們",
           Taiwan: "台灣",
           "Hong Kong": "香港",
-          origin_country_description: "你來自",
+          origin_country_description: "你來",
           forget_language_setting: "忘記語言設定",
         },
       },
