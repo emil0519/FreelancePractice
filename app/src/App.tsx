@@ -9,6 +9,7 @@ import { useTranslation } from "react-i18next";
 import { IHeaderTypes } from "./types/type";
 import { useChangeLanguage } from "./hooks/useChangeLanguage";
 import Contact from "./components/Contact";
+import Tappay from "./pages/Tappay";
 
 function App() {
   const { changeLanguage } = useChangeLanguage();
@@ -40,13 +41,15 @@ function App() {
   ];
 
   return (
-    <BrowserRouter>
-      <FunctionBar headerInfo={translationHeader} />
-      <Contact />
-      <Routes>
-        <Route path="/" element={<Translation />}></Route>
-      </Routes>
-    </BrowserRouter>
+    <Tappay>
+      <BrowserRouter>
+        <FunctionBar headerInfo={translationHeader} />
+        <Contact />
+        <Routes>
+          <Route path="/" element={<Translation />}></Route>
+        </Routes>
+      </BrowserRouter>
+    </Tappay>
   );
 }
 
