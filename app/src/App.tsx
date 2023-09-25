@@ -8,6 +8,7 @@ import Translation from "./pages/Translations";
 import FunctionBar from "./components/FunctionBar";
 import Contact from "./components/Contact";
 import Tappay from "./pages/Tappay";
+import Payment from "./pages/Tappay/Payment";
 
 import { useTranslation } from "react-i18next";
 import { IHeaderTypes } from "./types/type";
@@ -22,8 +23,7 @@ function App() {
   const navigate = useNavigate();
 
   const translationHeader: IHeaderTypes[] = [
-    { text: `${t("home")}` },
-    { text: `${t("about")}` },
+    { text: `${t("home")}`, customFunction: () => navigate("/") },
     {
       text: `${t("paymentMethod")}`,
       customFunction: () => navigate("/payment"),
@@ -57,7 +57,7 @@ function App() {
         <Contact />
         <Routes>
           <Route path="/" element={<Translation />}></Route>
-          <Route path="/payment" element={<Translation />}></Route>
+          <Route path="/payment" element={<Payment />}></Route>
         </Routes>
       </Tappay>
     </TappayContext.Provider>
