@@ -1,23 +1,33 @@
 import "./App.css";
 import "./util/i18n";
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
+
 import Translation from "./pages/Translations";
 import FunctionBar from "./components/FunctionBar";
+import Contact from "./components/Contact";
+import Tappay from "./pages/Tappay";
 
 import { useTranslation } from "react-i18next";
 import { IHeaderTypes } from "./types/type";
 import { useChangeLanguage } from "./hooks/useChangeLanguage";
-import Contact from "./components/Contact";
-import Tappay from "./pages/Tappay";
+
+const TappayState = { isTappayReady: false };
+export const TappayContext = React.createContext(TappayState);
 
 function App() {
   const { changeLanguage } = useChangeLanguage();
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const translationHeader: IHeaderTypes[] = [
     { text: `${t("home")}` },
     { text: `${t("about")}` },
+    {
+      text: `${t("paymentMethod")}`,
+      customFunction: () => navigate("/payment"),
+    },
     {
       text: "轉中文",
       customFunction: () => {
@@ -41,15 +51,16 @@ function App() {
   ];
 
   return (
-    <Tappay>
-      <BrowserRouter>
+    <TappayContext.Provider value={TappayState}>
+      <Tappay>
         <FunctionBar headerInfo={translationHeader} />
         <Contact />
         <Routes>
           <Route path="/" element={<Translation />}></Route>
+          <Route path="/payment" element={<Translation />}></Route>
         </Routes>
-      </BrowserRouter>
-    </Tappay>
+      </Tappay>
+    </TappayContext.Provider>
   );
 }
 
