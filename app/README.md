@@ -1,46 +1,39 @@
-# Getting Started with Create React App
+# 簡介 / Introduction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+這是一個用來練習 Freelance 功能的網站，目前還在草創階段，功能尚未成型。
+網站 demo[請參考這邊](https://emil-freelance-translation.web.app/)。
 
-## Available Scripts
+This is a website dedicated to practice my freelance skill. We are still in a rough start.
 
-In the project directory, you can run:
+Please check the demo [here](https://emil-freelance-translation.web.app/).
 
-### `npm start`
+# 聯繫方式 / Contacts
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+如有任何指教，請不吝[來函至 r09343018@ntu.edu.tw 賜教](r09343018@ntu.edu.tw)。
+或直接在 Issue 底下發起討論。
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+We welcome any suggestions or comment. Please feel free to contact us via mailing to [r09343018@ntu.edu.tw](r09343018@ntu.edu.tw)
 
-### `npm test`
+## 目前功能 / Current Feature
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 透過 i18n 實作翻譯功能
+- 以[IpApi](https://ipapi.co/json/)實作 custom hooks 來偵測用戶來源地
 
-### `npm run build`
+- Implement translation through i18n.
+- Detect user origin place through [IpApi](https://ipapi.co/json/).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 研究中 / WIP
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Tappay SDK - 串接 Tappay 所提供的信用卡付款功能
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Tappay SDK - Connect to Tappay to implement credit card payment service.
 
-### `npm run eject`
+## 計畫加入功能 / Upcoming feature
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Tappay SDK - 串接 Apple/Samsung Pay
+- 網頁動畫
+- 串接 Google 地圖
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Tappay SDK - Connect to Apple/Samsung Pay
+- Web animation
+- Connect to Google Map API
