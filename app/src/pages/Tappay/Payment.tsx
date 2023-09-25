@@ -84,7 +84,7 @@ function Payment() {
       {/* <button>Pay Now</button> */}
 
       <button className="" onClick={checkout}>
-        Pay
+        Payme
       </button>
     </>
   );
