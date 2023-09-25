@@ -9,10 +9,10 @@ Please check the demo [here](https://emil-freelance-translation.web.app/).
 
 # 聯繫方式 / Contacts
 
-如有任何指教，請不吝[來函至 r09343018@ntu.edu.tw 賜教](r09343018@ntu.edu.tw)。
+如有任何指教，請不吝[來函至 r09343018@ntu.edu.tw 賜教](mailto:r09343018@ntu.edu.tw)。
 或直接在 Issue 底下發起討論。
 
-We welcome any suggestions or comment. Please feel free to contact us via mailing to [r09343018@ntu.edu.tw](r09343018@ntu.edu.tw)
+We welcome any suggestions or comment. Please feel free to contact us via mailing to [r09343018@ntu.edu.tw](mailto:r09343018@ntu.edu.tw)
 
 ## 目前功能 / Current Feature
 
