@@ -24,6 +24,7 @@ function App() {
 
   const translationHeader: IHeaderTypes[] = [
     { text: `${t("home")}`, customFunction: () => navigate("/") },
+    { text: `Carousel`, customFunction: () => navigate("/Carousel") },
     {
       text: `${t("paymentMethod")}`,
       customFunction: () => navigate("/payment"),
@@ -58,6 +59,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Translation />}></Route>
           <Route path="/payment" element={<Payment />}></Route>
+          <Route path="/carousel" element={<Payment />}></Route>
         </Routes>
       </Tappay>
     </TappayContext.Provider>

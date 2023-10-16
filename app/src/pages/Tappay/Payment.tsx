@@ -14,18 +14,18 @@ function Payment() {
       cardCCVRef.current
     );
   }, []);
+
   async function checkout() {
     console.log(tappay.canGetPrime(), "tappay.canGetPrime()");
     // if (!tappay.canGetPrime()) {
     //   window.alert("付款資料輸入有誤");
     //   return;
     // }
-
     const result: any = await tappay.getPrime();
     console.log(result, "result");
-    if (!tappay.canGetPrime()) {
-      alert(result.msg);
-    }
+    // if (!tappay.canGetPrime()) {
+    //   alert(result.msg);
+    // }
     // if (result.status !== 0) {
     //   window.alert('付款資料輸入有誤');
     //   return;
@@ -39,13 +39,13 @@ function Payment() {
   return (
     <>
       <div className="form-group">
-        <label htmlFor="exampleInputEmail1">Email address</label>
+        {/* <label htmlFor="exampleInputEmail1">Email address</label>
         <input
           type="email"
           className="form-control"
           id="exampleInputEmail1"
           placeholder="Email"
-        />
+        /> */}
       </div>
       <div className="">
         <label htmlFor="card-number" className="=">
@@ -85,6 +85,18 @@ function Payment() {
 
       <button className="" onClick={checkout}>
         Payme
+      </button>
+
+      <button
+        className="ml-4"
+        onClick={() => {
+          console.log("update clicked");
+          (window as any).TPDirect.ccv.onUpdate((update: any) => {
+            console.log(update);
+          });
+        }}
+      >
+        Updates
       </button>
     </>
   );

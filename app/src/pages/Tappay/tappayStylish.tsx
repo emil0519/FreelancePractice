@@ -1,8 +1,8 @@
 const tappay = {
   setupSDK() {
     (window as any).TPDirect.setupSDK(
-      "12348",
-      "app_pa1pQcKoY22IlnSXq5m5WP5jFKzoRG58VEXpT7wU62ud7mMbDOGzCYIlzzLF",
+      "137320",
+      "app_Kw8r1y3FsqZ18CBOY53Dja0WLjaFISoKUKVcK0UUZQHPgIhxnq5OXkGMccE1",
       "sandbox"
     );
   },
@@ -33,7 +33,13 @@ const tappay = {
     });
   },
   canGetPrime() {
-    return (window as any).TPDirect.card.getTappayFieldsStatus().canGetPrime;
+    return (window as any).TPDirect.card.getTappayFieldsStatus();
+  },
+  onUpdate() {
+    return (window as any).TPDirect.card.onUpdate((updates: any) => {
+      console.log("update function");
+      console.log(updates);
+    });
   },
   getPrime() {
     return new Promise((resolve) => {
