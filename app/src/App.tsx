@@ -13,6 +13,7 @@ import Payment from "./pages/Tappay/Payment";
 import { useTranslation } from "react-i18next";
 import { IHeaderTypes } from "./types/type";
 import { useChangeLanguage } from "./hooks/useChangeLanguage";
+import Carousel from "./pages/Carousel";
 
 const TappayState = { isTappayReady: false };
 export const TappayContext = React.createContext(TappayState);
@@ -59,7 +60,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Translation />}></Route>
           <Route path="/payment" element={<Payment />}></Route>
-          <Route path="/carousel" element={<Payment />}></Route>
+          <Route path="/carousel" element={<Carousel />}></Route>
         </Routes>
       </Tappay>
     </TappayContext.Provider>
